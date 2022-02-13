@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@600&display=swap');
+.nav-link .iconi{
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+table.table td a.view {
+    color: #03A9F4;
+}
+table.table td a.edit {
+    color: #FFC107;
+}
+table.table td a.delete {
+    color: #E34724;
+}
+::-webkit-scrollbar {
+    height: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  table{
+ font-family: 'Karla', sans-serif;;
+  }
+
+ .btnclr1{
+      background-color: #74b9ff;
+  }
+    
+  .btnclr2{
+    background-color: #b2bec3;
+}
+.btnclr3{
+    background-color: #00b894;
+}
+.btnclr4{
+    background-color: #e17055;
+}
+.btnclr5{
+    background-color: #0984e3;
+} 
+
+div.dataTables_wrapper div.dataTables_filter input {
+    width:100%;
+    margin: 0;
+  }
+  
+  .m-heading-1.m-bordered {
+      font-family: karla;
+    border-right: 1px solid #10161c;
+    border-top: 1px solid #10161c;
+    border-bottom: 1px solid #10161c;
+    padding: 15px;
+}
+.border-after-green:after, .border-before-green:before, .border-green {
+    border-color: #32c5d2!important;
+}
+.m-heading-1 {
+    margin: 0 0 20px;
+    background: #fff;
+    padding-left: 15px;
+    border-left: 8px solid #88909a;
+}
+.editinput{
+    border: 0;
+    padding: .4rem;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+
+.cont{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .rouge{
+      margin-right: 5px;
+    padding: 1rem;
+    background-color:#ffcccc ;
+  }
+
+  .vert{
+    margin-right: 5px;
+  padding: 1rem;
+  background-color:#55efc4 ;
+}
+.material-icons{
+    margin-right: 10px;
+    padding: .5rem;
+}
+.dataTables_scrollBody{
+    transition: all 1s ease-in-out;
+}
+.produits_wrapper{
+    margin-bottom: 10px;
+    align-items: center;
+}
+.dataTables_length{
+    padding: 1rem;
+}
+#isosearch{
+    margin-top: 5px;
+    padding: 1.4rem;
+}
+.verif{
+    color: #2ecc71;
+}

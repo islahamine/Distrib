@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+<title>CoreUI Free Bootstrap Admin Template</title>
+
+
+<link rel="stylesheet" href="simplebar.css">
+
+<link href="normalizer.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
+
+<link href="css/examples.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<link href="style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./css/material-design-iconic-font.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel='stylesheet' href='https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+
+</head>
+<body>
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+<div class="sidebar-brand d-none d-md-flex">
+<img class="sidebar-brand-full" src="../images/logo.png" width="118" height="46" alt=""></img>
+</div>
+<ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+<li class="nav-item"><a class="nav-link" href="index.html">
+    <ion-icon class="iconi" name="home-outline"></ion-icon> Dashboard</a></li>
+<li class="nav-title">Les Outils</li>
+<li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+    <ion-icon class="iconi" name="people-outline"></ion-icon> Utilisateurs</a>
+<ul class="nav-group-items">
+<li class="nav-item"><a class="nav-link" href="#"><ion-icon class="iconi" name="person-add-outline"></ion-icon> Nouveau Utilisateur</a></li>
+</ul>
+</li>
+<li class="nav-group"><a class="nav-link nav-group-toggle" href="#"><ion-icon class="iconi" name="water-outline"></ion-icon> Produits</a>
+<ul class="nav-group-items">
+<li class="nav-item"><a class="nav-link" href="file:///D:/xampp/htdocs/Distrib/test/info.html"><ion-icon class="iconi" name="build-outline"></ion-icon> Gestion des Produits</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<!-- <li class="nav-divider"></li> -->
+
+</ul>
+<button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+</div>
+<div class="wrapper d-flex flex-column min-vh-100 bg-light">
+  <header class="header header-sticky mb-4">
+    <div class="container-fluid">
+    <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+    <img class="icon icon-lg" src="../icons/menu.png">
+    </button><a class="header-brand d-md-none" href="#">
+    <img src="../images/logo.png" width="118" height="46" alt="">
+    
+    </img></a>
+    <ul class="header-nav ms-auto">
+    <li>Bonjour Admin</li>
+    </ul>
+    <ul class="header-nav ms-3">
+    <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+    <div class="avatar avatar-md"><img class="avatar-img" src="avatars/8.jpg" alt="user@email.com"></div>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end pt-0">
+    <div class="dropdown-header bg-light py-2">
+    <div class="fw-semibold">Account</div>
+    </div><a class="dropdown-item" href="#">
+    Messages<span class="badge badge-sm bg-success ms-2">42</span></a><a class="dropdown-item" href="#">
+     Comments<span class="badge badge-sm bg-warning ms-2">42</span></a>
+    <div class="dropdown-header bg-light py-2">
+    <div class="fw-semibold">Settings</div>
+    </div><a class="dropdown-item" href="#">
+     Profile</a><a class="dropdown-item" href="file:///D:/xampp/htdocs/Distrib/index.html">
+     Logout</a>
+    </div>
+    </li>
+    </ul>
+    </div>
+    <div class="header-divider"></div>
+    <div class="container-fluid">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb my-0 ms-2">
+    <li class="breadcrumb-item">
+    <span>Home</span>
+    </li>
+    <li class="breadcrumb-item active"><span>Dashboard</span></li>
+    </ol>
+    </nav>
+    </div>
+    </header>
+<div class="body flex-grow-1 px-3">
+<div class="container-fluid">
+<div class="row">
+    <!-- div1 -->
+<div class="col-sm-6 col-lg-3">
+<div class="card cercleffect mb-4 text-white bg-ui1">
+<div class="card-body pb-0 pt-0 d-flex justify-content-between align-items-start">
+<div>
+<div class="fs-4 fw-semibold mrone"> <span class="bigiconi material-icons"> euro</span>
+</div>
+<div class="mrhalf fw-bold">Grand total</div>
+<div class="mrhalf fw-bold cstm"><span id="gt">24000.00</span>.00 Dhs</div>
+<div class="mrhalftwo">Augmenté de 60%</div>
+</div>
+
+</div>
+
+</div>
+</div>
+<!-- fin div 1 -->
+
+    <!-- div2 -->
+    <div class="col-sm-6 col-lg-3">
+        <div class="card cercleffect mb-4 text-white bg-ui2">
+        <div class="card-body pb-0 pt-0 d-flex justify-content-between align-items-start">
+        <div>
+        <div class="fs-4 fw-semibold mrone"><span class='bigiconi material-icons'>shopping_cart</span></div>
+        <div class="mrhalf fw-bold">Stock Total</div>
+        <div class="mrhalf fw-bold cstm"><span id="st">24390 </span> Packets</div>
+        <div class="mrhalftwo">Augmenté de 60%</div>
+        </div>
+        
+        </div>
+        
+        </div>
+        </div>
+        <!-- fin div 2 -->
+
+            <!-- div3 -->
+    <div class="col-sm-6 col-lg-3">
+    <div class="card cercleffect mb-4 text-white bg-ui3">
+    <div class="card-body pb-0 pt-0 d-flex justify-content-between align-items-start">
+    <div>
+    <div class="fs-4 fw-semibold mrone"> <span class='bigiconi material-icons'>flag</span> </div>
+    <div class="mrhalf fw-bold">Packets Restants</div>
+    <div class="mrhalf fw-bold cstm"><span id="pr">10439</span> Piéces</div>
+    <div class="mrhalftwo">diminué de 70%</div>
+    </div>
+    
+    </div>
+    
+    </div>
+    </div>
+    <!-- fin div 3 -->
+    <!-- div4 -->
+    <div class="col-sm-6 col-lg-3">
+        <div class="card cercleffect mb-4 text-white bg-ui4">
+        <div class="card-body pb-0 pt-0 d-flex justify-content-between align-items-start">
+        <div>
+        <div class="fs-4 fw-semibold mrone"> <span class='bigiconi material-icons'>restore</span> </div>
+        <div class="mrhalf fw-bold">Credit Total</div>
+        <div class="mrhalf fw-bold cstm"><span id="ct">-2340.00 </span>.00 Dhs</div>
+        <div class="mrhalftwo">Augmenté de 10%</div>
+        </div>
+        
+        </div>
+        
+        </div>
+        </div>
+        <!-- fin div 4 -->
+
+
+</div>
+<!-- table -->
+
+
+
+
+<div class="row">
+<div class="col-md-12">
+<div class="card mb-4">
+<div class="card-header">Gestion des Utilisateurs</div>
+<div class="card-body">
+  <table id="example" class="table table-hover responsive nowrap" style="width:100%">
+    <thead>
+      <tr>
+        <th>Nom Distributeur</th>
+        <th>Téléphone</th>
+        <th>Profession</th>
+        <th>Date de Naissance</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a href="#">
+            <div class="d-flex align-items-center">
+              <div class="avatar avatar-blue mr-3">OM</div>
+
+              <div class="">
+                <p class="font-weight-bold mb-0">Oumaima Mernissi</p>
+                <p class="text-muted mb-0">oumaimael@example.com</p>
+              </div>
+            </div>
+          </a>
+        </td>
+        <td>(212) xxx xxxxx</td>
+        <td>développeur</td>
+        <td>0x/0x/199x</td>
+        <td>
+          <div class="badge badge-success badge-success-alt">Autorisé</div>
+        </td>
+        <td>
+          <div class="dropdown">
+             <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+          </div>
+        </td>
+
+        
+      </tr>
+
+      <tr>
+        <td>
+          <a href="#">
+            <div class="d-flex align-items-center">
+              <div class="avatar avatar-pink mr-3">AI</div>
+
+              <div class="">
+                <p class="font-weight-bold mb-0">Amine Islah</p>
+                <p class="text-muted mb-0">amineislah@example.com</p>
+              </div>
+            </div>
+          </a>
+        </td>
+        <td> (212) xxx xxxxx</td>
+        <td>Assistant</td>
+        <td>0x/0x/199x</td>
+        <td>
+          <div class="badge badge-rvk">Revoqué</div>
+        </td>
+        <td>
+          <div class="dropdown">
+            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+           <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+           <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+         </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- controle modal -->
+  <div class="modal fade" id="editEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modification</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Nom Comptet:</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">telephone:</label>
+              <input type="text" class="form-control" id="phone">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Profession:</label>
+              <input type="text" class="form-control" id="prfs">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Test:</label>
+              <input type="text" class="form-control" id="Test">
+            </div>
+          
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Quitter</button>
+          <button type="button" class="btn btn-primary">Enregistrer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="deleteEmployeeModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">						
+            <h4 class="modal-title">Delete Employee</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">					
+            <p>Êtes-vous sûr de vouloir supprimer cet enregistrement?</p>
+            <p class="text-warning"><small>Cette action ne peut pas être récupérée aprés.</small></p>
+          </div>
+          <div class="modal-footer">
+            <input type="button" class="btn btn-default" data-dismiss="modal" value="Annulée">
+            <input type="submit" class="btn btn-danger" value="Supprimée">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- end controle modal -->
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<footer class="footer">
+</footer>
+</div>
+
+<script src="core.js"></script>
+<script src="simplebar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
+
+<script src="chartjs.js"></script>
+<script src="chartcore.js"></script>
+<script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
+<script src="js/main.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="islah.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js'></script>
+<script src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
+<script src='https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js'></script>
+
+</body>
+</html>

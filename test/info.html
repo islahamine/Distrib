@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+<title>CoreUI Free Bootstrap Admin Template</title>
+
+
+<link rel="stylesheet" href="simplebar.css">
+
+<link href="normalizer.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+<link rel="stylesheet" href="./css/material-design-iconic-font.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel='stylesheet' href='https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@2.0.0/css/boxicons.min.css'>
+
+<link rel="stylesheet" href="style2.css">
+
+
+
+</head>
+<body>
+   
+        
+    
+<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+<div class="sidebar-brand d-none d-md-flex">
+<img class="sidebar-brand-full" src="../images/logo.png" width="118" height="46" alt=""></img>
+</div>
+<ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+<li class="nav-item"><a class="nav-link" href="index.html">
+    <ion-icon class="iconi" name="home-outline"></ion-icon> Dashboard</a></li>
+<li class="nav-title">Les Outils</li>
+<li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+    <ion-icon class="iconi" name="people-outline"></ion-icon> Utilisateurs</a>
+<ul class="nav-group-items">
+<li class="nav-item"><a class="nav-link" href="#"><ion-icon class="iconi" name="person-add-outline"></ion-icon> Nouveau Utilisateur</a></li>
+</ul>
+</li>
+<li class="nav-group"><a class="nav-link nav-group-toggle" href="#"><ion-icon class="iconi" name="water-outline"></ion-icon> Produits</a>
+<ul class="nav-group-items">
+<li class="nav-item"><a class="nav-link" href="#"><ion-icon class="iconi" name="build-outline"></ion-icon> Gestion des Produits</a></li>
+</ul>
+</li>
+
+</ul>
+</li>
+<!-- <li class="nav-divider"></li> -->
+
+</ul>
+<button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+</div>
+<div class="wrapper d-flex flex-column min-vh-100 bg-light">
+<header class="header header-sticky mb-4">
+<div class="container-fluid">
+<button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+<img class="icon icon-lg" src="../icons/menu.png">
+</button><a class="header-brand d-md-none" href="#">
+<img src="../images/logo.png" width="118" height="46" alt="">
+
+</img></a>
+<ul class="header-nav ms-auto">
+<li>Bonjour Admin</li>
+</ul>
+<ul class="header-nav ms-3">
+<li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+<div class="avatar avatar-md"><img class="avatar-img" src="avatars/8.jpg" alt="user@email.com"></div>
+</a>
+<div class="dropdown-menu dropdown-menu-end pt-0">
+<div class="dropdown-header bg-light py-2">
+<div class="fw-semibold">Account</div>
+</div><a class="dropdown-item" href="#">
+Messages<span class="badge badge-sm bg-success ms-2">42</span></a><a class="dropdown-item" href="#">
+ Comments<span class="badge badge-sm bg-warning ms-2">42</span></a>
+<div class="dropdown-header bg-light py-2">
+<div class="fw-semibold">Settings</div>
+</div><a class="dropdown-item" href="#">
+ Profile</a><a class="dropdown-item" href="file:///D:/xampp/htdocs/Distrib/index.html">
+ Logout</a>
+</div>
+</li>
+</ul>
+</div>
+<div class="header-divider"></div>
+<div class="container-fluid">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb my-0 ms-2">
+<li class="breadcrumb-item">
+<span>Home</span>
+</li>
+<li class="breadcrumb-item active"><span>Dashboard</span></li>
+</ol>
+</nav>
+</div>
+</header>
+<!-- left panel -->
+<div class="body flex-grow-1 px-3">
+<div class="container-fluid">
+    <div class="m-heading-1 border-green m-bordered">
+       <div class="cont">
+           <div class="rouge"></div>
+           <span>Cette couleur signifie que le produit a approché la quantité minimale</span>
+       </div>
+       <div class="cont">
+           <div class="vert"></div>
+           <span>Cette couleur signifie que le produit est disponible en quantité abondante</span>
+           </div>
+       
+    </div>
+<div class="row">
+
+<!-- table -->
+
+<div class="col-md-12">
+<div class="card mb-4">
+<div class="card-header d-flex p-4">   
+    <div class="gestion d-flex">   
+           <span class="font-weight-bold"> Plus d'outils de gestion et d'exportation en cours de developpement</span>
+   </div> 
+</div>
+
+<div class="card-body">
+<!-- table -->
+<table id="produits" class="table table-bordered nowrap responsive" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>Ref Produit</th>
+        <th>Designation</th>
+        <th>Condt</th>
+        <th>PU ventes TTC</th>
+        <th>Retj-1</th>
+        <th>CHj</th>
+        <th>Total</th>
+        <th>Retj</th>
+        <th>Ventes</th>
+        <th>Val Ventes</th>
+        <th>Promo</th>
+        <th>Val Promo</th>
+        <th>Ventes Net</th>
+        <th>Val Ventes Net</th>
+        <th>Controle 1</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr  style="background-color: #ffcccc;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                 <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+           <tr  style="background-color: #ffcccc;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #55efc4;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #55efc4;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #55efc4;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #55efc4;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #55efc4;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #55efc4;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #55efc4;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #ffcccc;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #ffcccc;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #55efc4;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #55efc4;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #55efc4;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+          <tr  style="background-color: #55efc4;">
+            <td><span class="font-weight-bold">SA33NRP</span></td>
+            <td><span>Sidi Ali 33cl PET</span></td>
+            <td><span>12</span></td>
+            <td><span>22.40</span></td>
+            <td><span>71</span></td>
+            <td><span></span></td>
+            <td><span>71</span></td>
+            <td><span>26</span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td><span></span></td>
+            <td><span></span></td>
+            <td><span>45</span></td>
+            <td><span>918.00</span></td>
+            <td class="text-center"><span class='material-icons verif'>verified</span></td>
+            <td>
+                         <div class="dropdown">
+                    <button class="btn-transparent p-0 d-none delete" data-toggle="modal"><span  data-toggle="tooltip" title="Save"class='m-0 material-icons'>save</span></button>
+                    <button class="btn btn-transparent p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='material-icons'>more_vert</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item d-flex align-items-center" href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i>Voir</a>
+                        <a class="dropdown-item d-flex align-items-center" onclick="edit(this)" href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Modifier</a>
+                        <a class="dropdown-item d-flex align-items-center" href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>Supprimer</a>
+                    </div>
+                    </div>
+                    </div>
+            </td>
+    
+            
+          </tr>
+    </tbody>
+  </table>
+
+  
+<!-- end -->
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script src="core.js"></script>
+<script src="simplebar.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="islah.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js'></script>
+<script src='https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js'></script>
+<script src='https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.colVis.min.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js'></script>
+<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'></script>
+<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js'></script>
+
+
+<script>
+    $(document).ready(function() {
+
+	document.title='Simple DataTable';
+	// DataTable initialisation
+	var table = $('#produits').DataTable(
+		{   responsive:false,
+            scrollX:true,
+		}
+	);
+    document.querySelectorAll(".dataTables_filter")[0].removeChild(document.querySelectorAll(".dataTables_filter")[0].firstElementChild)
+    document.querySelectorAll(".dataTables_filter")[0].innerHTML = '<input type="search" Placeholder="Chercher ici !" id="isosearch" class="form-control form-control-sm" placeholder="" aria-controls="produits">';
+    $('#isosearch').keyup(function(){
+      table.search($(this).val()).draw() ;
+});
+});
+    
+  
+</script>
+</script>
+
+</body>
+</html>
